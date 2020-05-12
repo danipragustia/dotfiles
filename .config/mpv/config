@@ -1,0 +1,9 @@
+[default]
+osc=no
+no-audio-display
+mute=no
+alang=jp,jpn,Japanese,japanese,en,eng
+slang=en,eng
+screenshot-format=png
+gpu-context=waylandvk
+audio-channels=2
