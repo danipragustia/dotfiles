@@ -23,7 +23,7 @@ set $menu dmenu_path | dmenu -b | xargs swaymsg exec --
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg ~/wallpaper.jpg fill
+output * bg ~/wallpaper.png fill
 
 input * xkb_numlock enable
 #
@@ -215,5 +215,7 @@ bar {
         inactive_workspace #32323200 #32323200 #5c5c5c
     }
 }
+
+for_window [class="^.*"] border pixel 2
 
 include /etc/sway/config.d/*

@@ -2,27 +2,45 @@ URxvt*termName: screen-256color
 URxvt*scrollBar: false
 URxvt*scrollWithBuffer: true
 URxvt*depth: 32
-URxvt*font: xft:DejaVu Sans Mono:size=12,xft:IPAGothic
+URxvt*font: xft:Hack-Regular:type=size=12
 
-URxvt*background: rgba:0000/0000/0200/c800
-*.foreground:   #d3d0c8
+URxvt*background: rgba:0034/0034/0034/cccc
+! special
+*.foreground:   #b7b8b9
+*.background:   #0c0d0e
+*.cursorColor:  #b7b8b9
 
-*.color0:       #1b1918
-*.color8:       #766e6b
-*.color1:       #f22c40
-*.color9:       #f22c40
-*.color2:       #5ab738
-*.color10:      #5ab738
-*.color3:       #d5911a
-*.color11:      #d5911a
-*.color4:       #407ee7
-*.color12:      #407ee7
-*.color5:       #6666ea
-*.color13:      #6666ea
-*.color6:       #00ad9c
-*.color14:      #00ad9c
-*.color7:       #a8a19f
-*.color15:      #f1efee
+! black
+*.color0:       #0c0d0e
+*.color8:       #737475
+
+! red
+*.color1:       #e31a1c
+*.color9:       #e31a1c
+
+! green
+*.color2:       #31a354
+*.color10:      #31a354
+
+! yellow
+*.color3:       #dca060
+*.color11:      #dca060
+
+! blue
+*.color4:       #3182bd
+*.color12:      #3182bd
+
+! magenta
+*.color5:       #756bb1
+*.color13:      #756bb1
+
+! cyan
+*.color6:       #80b1d3
+*.color14:      #80b1d3
+
+! white
+*.color7:       #b7b8b9
+*.color15:      #fcfdfe
 
 URxvt.keysym.Shift-Up: command:\033]720;1\007
 URxvt.keysym.Shift-Down: command:\033]721;1\007
