@@ -1,7 +1,19 @@
-export EDITOR=vim
-export LANG=en_US.UTF-8
 export XDG_RUNTIME_DIR=/tmp
+export EDITOR=vim
 
-if [[ -z $DISPLAY ]] && [[ "$(tty)" = "/dev/tty1" ]]; then
+function git_branch() {
+	BRANCH=`git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'`
+	if [ ! "${BRANCH}" == "" ]
+	then
+		echo "[${BRANCH}]"
+	else
+		echo ""
+	fi
+}
+
+#export PS1="\[\033[38;5;160m\]\w\ [\033[38;5;29m\]\`git_branch\`\ \\$ \[$(tput sgr0)\]"
+export PS1="\[\033[38;5;160m\]\w\[$(tput sgr0)\] \[$(tput sgr0)\]\[\033[38;5;29m\]\`git_branch\`\[$(tput sgr0)\]\\$ \[$(tput sgr0)\]"
+
+if [ $(tty) == /dev/tty1 ]; then
 	exec sway
 fi
