@@ -1,4 +1,6 @@
 export XDG_RUNTIME_DIR=/tmp
+export GDK_BACKEND=wayland
+export CLUTTER_BACKEND=wayland
 export EDITOR=vim
 
 function git_branch() {
@@ -11,8 +13,7 @@ function git_branch() {
 	fi
 }
 
-#export PS1="\[\033[38;5;160m\]\w\ [\033[38;5;29m\]\`git_branch\`\ \\$ \[$(tput sgr0)\]"
-export PS1="\[\033[38;5;160m\]\w\[$(tput sgr0)\] \[$(tput sgr0)\]\[\033[38;5;29m\]\`git_branch\`\[$(tput sgr0)\]\\$ \[$(tput sgr0)\]"
+export PS1="\[\033[38;5;160m\]\w\[$(tput sgr0)\] \[$(tput sgr0)\]\[\033[38;5;29m\]\`git_branch\`\[$(tput sgr0)\]\$ \[$(tput sgr0)\]"
 
 if [ $(tty) == /dev/tty1 ]; then
 	exec sway

@@ -4,43 +4,32 @@ URxvt*scrollWithBuffer: true
 URxvt*depth: 32
 URxvt*font: xft:Hack-Regular:type=size=12
 
-URxvt*background: rgba:0034/0034/0034/cccc
-! special
-*.foreground:   #b7b8b9
-*.background:   #0c0d0e
-*.cursorColor:  #b7b8b9
-
-! black
-*.color0:       #0c0d0e
-*.color8:       #737475
-
-! red
-*.color1:       #e31a1c
-*.color9:       #e31a1c
-
-! green
-*.color2:       #31a354
-*.color10:      #31a354
-
-! yellow
-*.color3:       #dca060
-*.color11:      #dca060
-
-! blue
-*.color4:       #3182bd
-*.color12:      #3182bd
-
-! magenta
-*.color5:       #756bb1
-*.color13:      #756bb1
-
-! cyan
-*.color6:       #80b1d3
-*.color14:      #80b1d3
-
-! white
-*.color7:       #b7b8b9
-*.color15:      #fcfdfe
+*background: #FFFCFD
+*foreground: #250E07
+! Black + DarkGrey
+*color0:  #F3EAE9
+*color8:  #D8B8B3
+! DarkRed + Red
+*color1:  #873E40
+*color9:  #832426
+! DarkGreen + Green
+*color2:  #839A53
+*color10: #6F873E
+! DarkYellow + Yellow
+*color3:  #D4A520
+*color11: #C39104
+! DarkBlue + Blue
+*color4:  #A6B6CE
+*color12: #7B91B3
+! DarkMagenta + Magenta
+*color5:  #D68482
+*color13: #C97270
+! DarkCyan + Cyan
+*color6:  #89BEB7
+*color14: #63A098
+! LightGrey + White
+*color7:  #ECC3C2
+*color15: #F2CC60
 
 URxvt.keysym.Shift-Up: command:\033]720;1\007
 URxvt.keysym.Shift-Down: command:\033]721;1\007

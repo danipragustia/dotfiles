@@ -1,15 +1,16 @@
 * {
+    font-weight:bold;
     border: none;
     border-radius: 0;
     /* `otf-font-awesome` is required to be installed for icons */
-    font-family: Roboto, Helvetica, Arial, sans-serif;
+    font-family: Hack-Regular, Helvetica, Arial, sans-serif;
     font-size: 13px;
     min-height: 0;
 }
 
 window#waybar {
-    background-color: rgba(0, 0, 0, 0.3);
-    color: #ffffff;
+    background-color:#FFFCFD;
+    color:#D9B9B3;
     transition-property: background-color;
     transition-duration: .5s;
 }
@@ -39,20 +40,17 @@ window#waybar.chromium {
 #workspaces button {
     padding: 0 5px;
     background-color: transparent;
-    color: #ffffff;
-    border-bottom: 3px solid transparent;
+    color: #D9B9B3;
 }
 
 /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
 #workspaces button:hover {
     background: rgba(0, 0, 0, 0.2);
     box-shadow: inherit;
-    border-bottom: 3px solid #ffffff;
 }
 
 #workspaces button.focused {
-    background-color: #64727D;
-    border-bottom: 3px solid #ffffff;
+    background-color: #250E07;
 }
 
 #workspaces button.urgent {
@@ -60,8 +58,7 @@ window#waybar.chromium {
 }
 
 #mode {
-    background-color: #64727D;
-    border-bottom: 3px solid #ffffff;
+    background-color: #250E07;
 }
 
 #clock,
@@ -83,7 +80,7 @@ window#waybar.chromium {
 }
 
 #clock {
-    font-weight:bold;
+    color:#000;
     background-color: transparent;
 }
 
@@ -119,16 +116,14 @@ label:focus {
 }
 
 #cpu {
+    color:#6F873E;
     background-color: transparent;
     transition:0.3s;
 }
 
-#cpu:hover {
-    border-bottom:3px solid #fff;
-}
-
 #memory {
     background-color: transparent;
+    color:#7B91B3;
 }
 
 #backlight {
@@ -136,6 +131,7 @@ label:focus {
 }
 
 #network {
+    color: #C97290;
     background-color: transparent;
 }
 
