@@ -19,6 +19,10 @@ input * xkb_numlock enable
 
 bindsym $mod+Return exec $term
 
+bindsym --release Print exec grim - | wl-copy
+bindsym --release Shift+Print exec grim -g "$(slurp)"
+bindsym --release $mod+Print exec grim
+
 bindsym $mod+Shift+q kill
 bindsym $mod+d exec $menu
 floating_modifier $mod normal

@@ -1,6 +1,7 @@
 export XDG_RUNTIME_DIR=/tmp
 export GDK_BACKEND=wayland
 export CLUTTER_BACKEND=wayland
+export MOZ_DBUS_REMOTE=1
 export EDITOR=vim
 
 function git_branch() {
