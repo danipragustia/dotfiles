@@ -7,7 +7,11 @@ You can see and make some changes on it, if you have issue on it. You can make i
 ![Screenshot](https://github.com/danipragustia/dotfiles/raw/master/screenshot.png "Screenshot")
 
 Linux Distribution : Alpine Linux
+
 Window Manager : Sway
+
 Terminal : Alacritty
+
 Shell : Ash
+
 Editor : Vim
