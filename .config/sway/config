@@ -4,7 +4,7 @@ set $down j
 set $up k
 set $right l
 
-set $term urxvt
+set $term alacritty
 set $menu dmenu_path | dmenu -b | xargs swaymsg exec --
 
 set $w1 一
@@ -13,7 +13,7 @@ set $w3 三
 set $w4 四
 set $w5 五
 
-output * bg ~/wallpaper.jpg fill
+output * bg ~/wallpaper.png fill
 
 input * xkb_numlock enable
 
