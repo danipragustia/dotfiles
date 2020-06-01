@@ -1,15 +1,27 @@
 {
 	"layer": "top",
-	"modules-left": ["sway/workspaces", "sway/mode"],
-	"modules-right": ["clock","tray","network","memory","cpu"],
-	"sway/window": {
-		"format": "{}",
-		"max-length": 50
+	"modules-left": ["custom/start", "sway/workspaces",  "sway/window", "sway/mode"],
+	"modules-center": ["custom/time"],
+	"modules-right": ["custom/date","tray","network","memory","cpu"],
+	"custom/start": {
+		"format": " ■ ",
+		"on-click": "dmenu_path | dmenu -b | xargs swaymsg exec --"
 	},
-	"clock": {
+	"sway/window": {
+		"format": " {}",
+		"max-length": 80
+	},
+	"custom/time": {
+		"format": "{}",
 		"interval": 60,
-		"format": "{:%H:%M}",
-		"max-length": 25
+		"max-length": 50,
+		"exec": "date +'%H:%M'"
+	},
+	"custom/date": {
+		"interval": 86400,
+		"format": " {} ",
+		"max-length": 50,
+		"exec": "date +'%A, %d %h %Y'"
 	},
 	"memory": {
 		"interval": 30,
@@ -27,9 +39,5 @@
 		"format-disconnected": "Offline",
 		"format-alt": "IP : {ipaddr}",
 		"max-length": 50
-	},
-	"tray": {
-		"icon-size": 21,
-		"spacing": 10
 	}
 }

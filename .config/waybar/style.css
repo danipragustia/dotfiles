@@ -2,8 +2,7 @@
     font-weight:bold;
     border: none;
     border-radius: 0;
-    /* `otf-font-awesome` is required to be installed for icons */
-    font-family: Hack-Regular, Helvetica, Arial, sans-serif;
+    font-family: NotoSansCJK-Regular, Helvetica, Arial, sans-serif;
     font-size: 13px;
     min-height: 0;
 }
@@ -28,15 +27,6 @@ window#waybar.solo {
 }
 */
 
-window#waybar.termite {
-    background-color: #3F3F3F;
-}
-
-window#waybar.chromium {
-    background-color: #000000;
-    border: none;
-}
-
 #workspaces button {
     padding: 0 5px;
     background-color: transparent;
@@ -46,14 +36,17 @@ window#waybar.chromium {
 /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
 #workspaces button:hover {
     background: rgba(0, 0, 0, 0.2);
+    color:#fff;
     box-shadow: inherit;
 }
 
 #workspaces button.focused {
+    color:#fff;
     background-color: #250E07;
 }
 
 #workspaces button.urgent {
+    color:#fff;
     background-color: #eb4d4b;
 }
 
@@ -62,53 +55,14 @@ window#waybar.chromium {
 }
 
 #clock,
-#battery,
 #cpu,
 #memory,
-#temperature,
-#backlight,
 #network,
 #pulseaudio,
-#custom-media,
-#tray,
 #mode,
-#idle_inhibitor,
-#mpd {
-    padding: 0 10px;
-    margin: 0 4px;
-    color: #ffffff;
-}
-
-#clock {
-    color:#000;
-    background-color: transparent;
-}
-
-#battery {
-    background-color: #ffffff;
-    color: #000000;
-}
-
-#battery.charging {
-    color: #ffffff;
-    background-color: #26A65B;
-}
-
-@keyframes blink {
-    to {
-        background-color: #ffffff;
-        color: #000000;
-    }
-}
-
-#battery.critical:not(.charging) {
-    background-color: #f53c3c;
-    color: #ffffff;
-    animation-name: blink;
-    animation-duration: 0.5s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
+#idle_inhibitor {
+	padding:0 10px;
+	margin:0 4px;
 }
 
 label:focus {
@@ -124,10 +78,6 @@ label:focus {
 #memory {
     background-color: transparent;
     color:#7B91B3;
-}
-
-#backlight {
-    background-color: transparent;
 }
 
 #network {
@@ -147,54 +97,7 @@ label:focus {
     background-color: transparent;
 }
 
-#custom-media {
-    background-color: #66cc99;
-    color: #2a5c45;
-    min-width: 100px;
-}
-
-#custom-media.custom-spotify {
-    background-color: #66cc99;
-}
-
-#custom-media.custom-vlc {
-    background-color: #ffa000;
-}
-
-#temperature {
-    background-color: #f0932b;
-}
-
-#temperature.critical {
-    background-color: #eb4d4b;
-}
-
-#tray {
-    background-color: transparent;
-}
-
-#idle_inhibitor {
-    background-color: #2d3436;
-}
-
-#idle_inhibitor.activated {
-    background-color: #ecf0f1;
-    color: #2d3436;
-}
-
-#mpd {
-    background-color: #66cc99;
-    color: #2a5c45;
-}
-
-#mpd.disconnected {
-    background-color: #f53c3c;
-}
-
-#mpd.stopped {
-    background-color: #90b1b1;
-}
-
-#mpd.paused {
-    background-color: #51a37a;
+#custom-start {
+    background-color:#ECC3C2;
+    color:#fff;
 }
