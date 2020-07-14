@@ -2,14 +2,14 @@
 	"layer": "top",
 	"modules-left": ["custom/start", "sway/workspaces",  "sway/window", "sway/mode"],
 	"modules-center": ["custom/time"],
-	"modules-right": ["custom/date","tray","network","memory","cpu"],
+	"modules-right": ["custom/date","memory","cpu","temperature","network","pulseaudio","battery"],
 	"custom/start": {
 		"format": " ■ ",
 		"on-click": "dmenu_path | dmenu -b | xargs swaymsg exec --"
 	},
 	"sway/window": {
 		"format": " {}",
-		"max-length": 80
+		"max-length": 60
 	},
 	"custom/time": {
 		"format": "{}",
@@ -18,9 +18,9 @@
 		"exec": "date +'%H:%M'"
 	},
 	"custom/date": {
-		"interval": 86400,
-		"format": " {} ",
-		"max-length": 50,
+		"format": "{}",
+		"interval": 36500,
+		"max-length": 30,
 		"exec": "date +'%A, %d %h %Y'"
 	},
 	"memory": {
@@ -34,10 +34,58 @@
 		"max-length": 50
 	},
 	"network": {
-		"format-ethernet": " LAN",
-		"format-linked": "LAN Non-IP",
-		"format-disconnected": "Offline",
-		"format-alt": "IP : {ipaddr}",
-		"max-length": 50
+	    "interface": "wlan0",
+	    "format": "{ifname}",
+	    "format-wifi": "{essid} ",
+	    "format-ethernet": "{ifname} ",
+	    "format-disconnected": "", //An empty format will hide the module.
+	    "tooltip-format": "{ifname}",
+	    "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
+	    "tooltip-format-ethernet": "{ifname} ",
+	    "tooltip-format-disconnected": "Disconnected",
+	    "max-length": 50
+	},
+	"battery": {
+		"bat": "BAT0",
+		"interval": 60,
+		"states": {
+			"warning": 30,
+			"critical": 15
+		},
+		"format": "{capacity}% {icon}",
+		"format-icons": ["", "", "", "", ""],
+		"max-length": 25
+	},
+	"pulseaudio": {
+		"format": "{volume}% {icon}",
+		"format-bluetooth": "{volume}% {icon}",
+		"format-muted": "",
+		"format-icons": {
+			"headphone": "",
+			"hands-free": "",
+			"headset": "",
+			"phone": "",
+			"portable": "",
+			"car": "",
+			"default": ["", ""]
+		},
+		"scroll-step": 1
+	},
+	 "temperature": {
+	 	// "thermal-zone": 2,
+		// "hwmon-path": "/sys/class/hwmon/hwmon0/temp1_input",
+		// "critical-threshold": 60,
+		// "format-critical": " {temperatureC}°C ",
+		"format": " {temperatureC}°C"
 	}
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }

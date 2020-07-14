@@ -4,8 +4,9 @@ set $down j
 set $up k
 set $right l
 
-set $term alacritty
+set $term urxvt
 set $menu dmenu_path | dmenu -b | xargs swaymsg exec --
+set $sink `patctl list short sinks | cut -f1`
 
 set $w1 一
 set $w2 二
@@ -13,15 +14,23 @@ set $w3 三
 set $w4 四
 set $w5 五
 
-output * bg ~/wallpaper.png fill
-
+output * bg ~/wallpaper.jpg fill
 input * xkb_numlock enable
 
 bindsym $mod+Return exec $term
 
 bindsym --release Print exec grim - | wl-copy
 bindsym --release Shift+Print exec grim -g "$(slurp)"
-bindsym --release $mod+Print exec grim
+bindsym --release $mod+Print exec grim -g "$(slurp)"
+bindsym --release $mod+Shift+Print exec grim
+
+bindsym $mod+z exec --no-startup-id pactl set-sink-volume $sink +10%
+bindsym $mod+x exec --no-startup-id pactl set-sink-volume $sink -10%
+bindsym $mod+c exec --no-startup-id pactl set-sink-mute $sink toggle
+
+bindsym $mod+Shift+a exec --no-startup-id pactl set-sink-volume $sink +5%
+bindsym $mod+Shift+s exec --no-startup-id pactl set-sink-volume $sink -5%
+bindsym $mod+Shift+d exec --no-startup-id pactl set-sink-mute $sink toggle
 
 bindsym $mod+Shift+q kill
 bindsym $mod+d exec $menu

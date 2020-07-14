@@ -1,1 +1,5 @@
 alias commitall='x(){ git add . && git commit -m "$1" && git push origin master; unset -f x; }; x'
+
+alias volup='x(){ pactl set-sink-volume 0 +$1%; unset -f x; }; x'
+alias voldown='x(){ pactl set-sink-volume 0 -$1%; unset -f x; }; x'
+alias volmute='x(){ pactl set-sink-mute 0 toggle; unset -f x; }; x'

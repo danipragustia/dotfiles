@@ -60,9 +60,11 @@ window#waybar.solo {
 #network,
 #pulseaudio,
 #mode,
+#battery,
+#temperature,
 #idle_inhibitor {
-	padding:0 10px;
-	margin:0 4px;
+	padding:0 5px;
+	margin:0 5px;
 }
 
 label:focus {
@@ -95,6 +97,18 @@ label:focus {
 
 #pulseaudio.muted {
     background-color: transparent;
+}
+
+#battery {
+    color: #89BEB7;
+}
+
+#temperature {
+    color: #832426;
+}
+
+#pulseaudio {
+	color: #D8D8B3;
 }
 
 #custom-start {
