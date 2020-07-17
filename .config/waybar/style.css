@@ -62,9 +62,9 @@ window#waybar.solo {
 #mode,
 #battery,
 #temperature,
-#idle_inhibitor {
-	padding:0 5px;
-	margin:0 5px;
+#idle_inhibitor,
+#custom-date {
+	margin:0 8px;
 }
 
 label:focus {
@@ -93,22 +93,41 @@ label:focus {
 
 #pulseaudio {
     background-color: transparent;
+    color: #ecc3c2;
 }
 
 #pulseaudio.muted {
     background-color: transparent;
+    color: #832426;
 }
 
 #battery {
     color: #89BEB7;
 }
 
-#temperature {
-    color: #832426;
+#battery.charging {
+    color: #6f873e;
 }
 
-#pulseaudio {
-	color: #D8D8B3;
+@keyframes blink {
+    to {
+	background-color: #ffffff;
+	color: black;
+    }
+}
+
+#battery.warning:not(.charging) {
+    background: #f53c3c;
+    color: white;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#temperature {
+    color: #832426;
 }
 
 #custom-start {
