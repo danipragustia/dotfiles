@@ -4,14 +4,6 @@ Its my personal dotfiles, color scheme and some configuration may change frequen
 
 You can see and make some changes on it, if you have issue on it. You can make issue on github or send mail to me.
 
-![Screenshot](https://github.com/danipragustia/dotfiles/raw/master/screenshot.png "Screenshot")
+![Screenshot dwm](https://github.com/danipragustia/dotfiles/raw/master/screenshot-dwm.png" "Screenshot dwm")
+![Screenshot Sway](https://github.com/danipragustia/dotfiles/raw/master/screenshot.png "Screenshot Sway")
 
-Linux Distribution : Alpine Linux
-
-Window Manager : Sway
-
-Terminal : Alacritty
-
-Shell : Ash
-
-Editor : Vim
