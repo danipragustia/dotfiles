@@ -1,6 +1,4 @@
-while true; do
-    xsetroot -name "[#StayAtHome][$(cat /sys/class/power_supply/BAT0/capacity)%][$(date +"%d-%h-%Y %H:%M")]"
-    sleep 1m
-done &
-feh --bg-scale ~/wallpaper.jpg &
+~/.config/dwm_status &
+xautolock -time 5 -locker slock &
+feh --bg-fill --randomize ~/.wallpapers/* &
 exec dwm

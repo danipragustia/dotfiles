@@ -1,0 +1,24 @@
+print_temp(){
+	temp=$(head -c 2 /sys/class/thermal/thermal_zone0/temp)
+	echo " ${temp}°C"
+}
+
+print_bat(){
+	charge=$(awk '{ sum += $1 } END { print sum }' /sys/class/power_supply/BAT*/capacity)
+	if [ charge -eq 100 ]; then
+		echo " ${charge}%"
+	elif [ charge -gt 80]; then
+		echo " ${charge}%"
+	elif [ charge -gt 50]; then
+		echo " ${charge}%"
+	elif [ charge -gt 30]; then
+		echo " ${charge}%"
+	else
+		echo " ${charge}%"
+	fi
+}
+
+while true; do
+    xsetroot -name " $(print_temp) $(print_bat) $(date +"%d-%h-%Y %H:%M")"
+    sleep 1m
+done
