@@ -3,22 +3,39 @@ print_temp(){
 	echo " ${temp}°C"
 }
 
+#TODO: Make it more reasonable
 print_bat(){
-	charge=$(awk '{ sum += $1 } END { print sum }' /sys/class/power_supply/BAT*/capacity)
-	if [ charge -eq 100 ]; then
-		echo " ${charge}%"
-	elif [ charge -gt 80]; then
-		echo " ${charge}%"
-	elif [ charge -gt 50]; then
-		echo " ${charge}%"
-	elif [ charge -gt 30]; then
-		echo " ${charge}%"
+    charge=$(awk '{ sum += $1 } END { print sum }' /sys/class/power_supply/BAT*/capacity)
+    if [ "$charge" -lt "10" ]; then
+	echo " ${charge}%"
+    else
+	if [ "$charge" -lt "30" ]; then
+	    echo " ${charge}%"
 	else
-		echo " ${charge}%"
+	    if [ "$charge" -lt "50" ]; then
+		echo " ${charge}%"
+	    else
+		if [ "$charge" -lt "80" ]; then
+		    echo " ${charge}%"
+		else 
+		    echo " ${charge}%"
+		fi
+	    fi
 	fi
+    fi
 }
 
-while true; do
-    xsetroot -name " $(print_temp) $(print_bat) $(date +"%d-%h-%Y %H:%M")"
-    sleep 1m
-done
+print_sound(){
+	volume=$(amixer sget Master | awk -F"[][]" '/dB/ { print $2 }')
+	echo " ${volume}"
+}
+
+
+if [ $1 = "-update" ]; then
+     	xsetroot -name " $(print_sound) $(print_temp) $(print_bat) $(date +"%d-%h-%Y %H:%M")"
+else
+	while true; do
+	      xsetroot -name " $(print_sound) $(print_temp) $(print_bat) $(date +"%d-%h-%Y %H:%M")"
+	      sleep 1m
+	done
+fi

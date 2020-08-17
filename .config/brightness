@@ -1,0 +1,43 @@
+#!/bin/sh
+
+function send_notification {
+    DIR=`dirname "$0"`
+    cur=$(xbacklight | awk '{print int($1+0.5)}') 
+    if [ "$cur" = "0" ]; then
+        icon_name="/usr/share/icons/Numix/48/notifications/notification-display-brightness-off.svg"
+	$DIR/notify-send.sh "$cur""      " -i "$icon_name" -t 2000 -h int:value:"$cur" -h string:synchronous:"─" --replace=556
+    else
+	if [ "$cur" -lt "10" ]; then
+	    icon_name="/usr/share/icons/Numix/48/notifications/notification-display-brightness-low.svg"
+	    $DIR/notify-send.sh "$cur""     " -i "$icon_name" --replace=556 -t 2000
+	else
+            if [ "$cur" -lt "30" ]; then
+		icon_name="/usr/share/icons/Numix/48/notifications/notification-display-brightness-low.svg"
+            else
+		if [ "$cur" -lt "70" ]; then
+                    icon_name="/usr/share/icons/Numix/48/notifications/notification-display-brightness-medium.svg"
+		else
+                    icon_name="/usr/share/icons/Numix/48/notifications/notification-display-brightness-high.svg"
+		fi
+            fi
+	fi
+    fi
+    bar=$(seq -s "─" $(($cur/5)) | sed 's/[0-9]//g')
+    $DIR/notify-send.sh "$cur"" ""$bar" -i "$icon_name" -t 2000 -h int:value:"$cur" -h string:synchronous:"$bar" --replace=556
+    $DIR/dwm_status -update
+}
+
+ case $1 in
+     up)
+	 xbacklight +10 > /dev/null
+	 send_notification
+	 ;;
+     down)
+	 xbacklight -10 > /dev/null
+	 send_notification
+	 ;;
+     get)
+	 echo $(xbacklight)
+	 ;;
+ esac
+
