@@ -1,0 +1,11 @@
+"~/.config/volume_set down"
+XF86AudioLowerVolume
+
+"~/.config/volume_set up"
+XF86AudioRaiseVolume
+
+"~/.config/volume_set mute"
+XF86AudioMute
+
+"slock"
+XF86ScreenSaver
