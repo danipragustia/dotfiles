@@ -19,7 +19,15 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(package-selected-packages (quote (web-mode 0x0))))
+ '(ansi-color-faces-vector
+   [default default default italic underline success warning error])
+ '(ansi-color-names-vector
+   ["black" "#d55e00" "#009e73" "#f8ec59" "#0072b2" "#cc79a7" "#56b4e9" "white"])
+ '(custom-enabled-themes nil)
+ '(custom-safe-themes
+   '("5f824cddac6d892099a91c3f612fcf1b09bb6c322923d779216ab2094375c5ee" default))
+ '(frame-brackground-mode 'dark)
+ '(package-selected-packages '(gruber-darker-theme web-mode 0x0)))
 
 (setq x-select-enable-clipboard t)
 
