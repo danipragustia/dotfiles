@@ -16,10 +16,10 @@ print_sound(){
 
 
 if [ $1 = "-update" ]; then
-    xsetroot -name "[$(print_sound)][$(print_temp)][$(print_bat)][$(date +"%d-%h-%Y %H:%M")]"
+   xsetroot -name " 醙 $(print_sound)   $(print_temp)   $(print_bat) $(date +"%d-%h-%Y %H:%M")"
 else
     while true; do
-	xsetroot -name "[$(print_sound)][$(print_temp)][$(print_bat)][$(date +"%d-%h-%Y %H:%M")]"
+	xsetroot -name " 醙 $(print_sound)   $(print_temp)   $(print_bat) $(date +"%d-%h-%Y %H:%M")"
 	sleep 1m
     done
 fi
